@@ -16,10 +16,10 @@ app.use(
   }),
 );
 
-app.use(express.static('public'))
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('*', (req,res) => {
-  res.sendFile(path.resolve(__dirname,'public','index.html'))
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
 })
 
 const PORT = process.env.PORT || 5000
